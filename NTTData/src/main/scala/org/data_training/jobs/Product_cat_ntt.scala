@@ -11,7 +11,7 @@ case class Product_cat_ntt() extends Runnable {
   def run(spark: SparkSession, odate: String, engine: Engine): Unit = {
     print("############## starting Product_cat_ntt JOB ##############")
 
-    product_Cat_ntDF = spark.sql("SELECT * FROM product_category_nt ")
+    product_Cat_ntDF = spark.sql("SELECT * FROM product_category_name_translation ")
 
     print("############## processing Product_cat_ntt JOB ##############")
 
@@ -19,7 +19,10 @@ case class Product_cat_ntt() extends Runnable {
 
     print("############## writing Product_cat_ntt JOB ##############")
 
-    result.write.csv("/tmp/spark_output/data.csv")
+    result.write.option("delimiter", ",").csv("/tmp/spark_output/product_category.csv")
+
+
+
 
     print("##############  Product_cat_ntt JOB Finished ##############")
   }
