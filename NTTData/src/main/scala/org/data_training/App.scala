@@ -30,7 +30,7 @@ object App extends Constant{
       }
     }
 
-    print("hello")
+
 
   }
 

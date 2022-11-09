@@ -4,11 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ffb4202-2b2c-4c82-884d-04284ffcf36c" name="Changes" comment="">
+    <list default="true" id="7ffb4202-2b2c-4c82-884d-04284ffcf36c" name="Changes" comment="New jobs">
+      <change afterPath="$PROJECT_DIR$/../Hive/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/.idea/scala_compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/src/main/scala/org/example/App.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/src/test/scala/samples/junit.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/src/test/scala/samples/scalatest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Hive/src/test/scala/samples/specs.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/Hdfs_into_postgres.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/mariadb.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/src/main/scala/org/example/App.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/src/test/scala/samples/junit.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/src/test/scala/samples/scalatest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/src/test/scala/samples/specs.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/scala_compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/src/main/scala/org/example/App.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/src/test/scala/samples/junit.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/src/test/scala/samples/scalatest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/src/test/scala/samples/specs.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/ETL_Jobs/Product_cat_ntt.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/App.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Constant.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Constant.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Engine.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Engine.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/Product_cat_ntt.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/Product_cat_ntt.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/Customers.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/Customers.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +65,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -40,14 +80,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/AZComputer/IdeaProjects/NTTData",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/AZComputer/IdeaProjects/NTTData&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\AZComputer\IdeaProjects\NTTData\src\main\scala" />
@@ -62,6 +102,14 @@
       <option name="presentableId" value="Default" />
       <updated>1664540955997</updated>
     </task>
+    <task id="LOCAL-00001" summary="New jobs">
+      <created>1665755781776</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665755781776</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -73,17 +121,6 @@
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
                   <entry key="Show.Git.Branches" value="true" />
-                </map>
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="main" />
-                      </list>
-                    </value>
-                  </entry>
                 </map>
               </option>
             </State>
@@ -112,6 +149,6 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="New jobs" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <option name="LAST_COMMIT_MESSAGE" value="New jobs" />
   </component>
 </project>

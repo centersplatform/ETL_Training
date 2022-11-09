@@ -13,7 +13,7 @@ var customers_DF: DataFrame = _
   def run (spark: SparkSession, odate: String, engine: Engine): Unit = {
   print ("############## starting Customers JOB ##############")
 
-  customers_DF = spark.sql ("SELECT * FROM customers_dataset ")
+  customers_DF = spark.sql ("SELECT * FROM ecom.customers_dataset ")
 
   print ("############## processing customers JOB ##############")
 
@@ -21,9 +21,10 @@ var customers_DF: DataFrame = _
 
   print ("############## writing customers JOB ##############")
 
-  result.write.option("delimiter", ",").csv ("/tmp/spark_output/customers.csv")
+  result.coalesce(1).write.option("delimiter", ",").csv ("hdfs://192.168.182.17:8020/hive/warehouse/processEcomData/customers_dataset_final")
 
-  print ("##############  Customers JOB Finished ##############")
+  print ("##############  Customers JOB Finished ###s###########")
+    print(s"working dir: ${System.getProperty("user.dir")}")
   }
 
   def process () = {

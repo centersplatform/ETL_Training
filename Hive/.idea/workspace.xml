@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="59f52596-d656-40fa-9890-13b61107fdff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/org/example/App.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/samples/junit.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/samples/scalatest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/samples/specs.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/mariadb.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/src/main/scala/org/example/App.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/src/test/scala/samples/junit.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/src/test/scala/samples/scalatest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mariadb/src/test/scala/samples/specs.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/scala_compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/src/main/scala/org/example/App.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/src/test/scala/samples/junit.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/src/test/scala/samples/scalatest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sparkHive/src/test/scala/samples/specs.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/engine/Engine.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/engine/Engine.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Product_cat_ntt.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Product_cat_ntt.scala" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2H264x9LpExEhdgC8LuHuHx11Kc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/AZComputer/IdeaProjects/NTTData"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="59f52596-d656-40fa-9890-13b61107fdff" name="Changes" comment="" />
+      <created>1667470646124</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667470646124</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
