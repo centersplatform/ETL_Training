@@ -25,6 +25,9 @@ class CustomerMasterData() extends Runnable{
 
     // Read orders_df and change type of order_estimated_delivery_date to a short date
     var orders_df = spark.sql("SELECT * FROM ecom1.orders_dataset ")
+    orders_df.columns.foreach(col_name => {
+      orders_df = orders_df.withColumn(col_name, regexp_replace(orders_df(col_name), "\"", ""))
+    })
     orders_df = orders_df.withColumn("order_estimated_delivery_date1",$"order_estimated_delivery_date".cast(DateType))
     var drop_column = orders_df.drop($"order_estimated_delivery_date")
     var rename_column = orders_df.withColumnRenamed("order_estimated_delivery_date1", "order_estimated_delivery_date")
