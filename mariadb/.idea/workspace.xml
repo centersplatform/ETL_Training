@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f23cb614-6f69-427d-a9fa-f9534266492f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../NTTData/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/App.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/Runnable.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/Runnable.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/engine/Constant.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/engine/Constant.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Customers.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Customers.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Geolocation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Geolocation.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Hdfs_into_postgres.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Hdfs_into_postgres.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Order_items.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Order_items.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Order_payments.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Order_payments.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Order_reviews.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Order_reviews.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Orders.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Orders.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Product_cat_ntt.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Product_cat_ntt.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Products.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Products.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Sellers.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../NTTData/src/main/scala/org/data_training/jobs/Sellers.scala" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2GxAC20XtA2RH7txvefjCnznCQb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/AZComputer/IdeaProjects/mariadb&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f23cb614-6f69-427d-a9fa-f9534266492f" name="Changes" comment="" />
+      <created>1667319731825</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667319731825</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
