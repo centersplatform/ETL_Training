@@ -19,12 +19,12 @@ object App extends Constant{
     val spark = engine.init_spark()
 
     val JobsNames = args(0)
-
+    val file_location = args(1)
     val JobsToBeExecuted = getJobsFromInput(JobsNames)
     JobsToBeExecuted.foreach{ runnableJOB =>
       try{
         //runnableJOB.JobsName2Log() = JobsNames
-        runnableJOB.run(spark,"",engine)
+        runnableJOB.run(spark,"",engine,file_location)
       }catch{
         case exception : Exception => print(" Job "+ runnableJOB.JobsName2Log()+ " failed. /n" + exception)
       }

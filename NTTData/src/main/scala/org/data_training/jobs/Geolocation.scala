@@ -9,7 +9,7 @@ case class Geolocation() extends Runnable  {
 
   var geolocation_DF: DataFrame = _
 
-  def run(spark: SparkSession, odate: String, engine: Engine): Unit = {
+  def run(spark: SparkSession, odate: String, engine: Engine,args: String*): Unit = {
     print("############## starting Geolocation JOB ##############")
 
     geolocation_DF = spark.sql("SELECT * FROM geolocation_dataset ")

@@ -9,7 +9,7 @@ case class Products() extends Runnable {
 
   var product_DF: DataFrame = _
 
-  def run(spark: SparkSession, odate: String, engine: Engine): Unit = {
+  def run(spark: SparkSession, odate: String, engine: Engine,args: String*): Unit = {
     print("############## starting Products JOB ##############")
 
     product_DF = spark.sql("SELECT * FROM products_dataset ")
