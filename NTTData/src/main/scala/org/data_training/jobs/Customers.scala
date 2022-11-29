@@ -3,8 +3,7 @@ package org.data_training.jobs
 import org.data_training.Runnable
 import org.apache.spark.sql.functions.{column, current_timestamp, date_format, regexp_replace}
 import org.apache.spark.sql.{DataFrame, SparkSession, types}
-import org.data_training.engine.Engine
-import org.data_training.utils.{ReadDataframes, WriteDataframes}
+import org.data_training.engine.{Engine, ReadDataframes, WriteDataframes}
 
 
 case class Customers() extends Runnable {
