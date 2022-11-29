@@ -9,7 +9,7 @@ case class Order_payments() extends Runnable {
 
   var order_payments_DF: DataFrame = _
 
-  def run(spark: SparkSession, odate: String, engine: Engine,args: String*): Unit = {
+  def run(spark: SparkSession, engine: Engine,args: String*): Unit = {
     print("############## starting Order_payments JOB ##############")
 
     order_payments_DF = spark.sql("SELECT * FROM order_payments_dataset ")
