@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7ffb4202-2b2c-4c82-884d-04284ffcf36c" name="Changes" comment="add new jobs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/App.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Constant.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Constant.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/Customers.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/Customers.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/utils/ReadDFs.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/utils/ReadDFs.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/utils/ReadDataframes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/ReadDataframes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/utils/WriteDFs.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/utils/WriteDFs.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/utils/WriteDataframes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/WriteDataframes.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +33,20 @@
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="centersplatform" />
+        <option name="repository" value="ETL_Training" />
+      </RepoCoordinatesHolder>
+    </option>
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="68209e8a-9030-427a-bf6a-bee16fee47cf" />
+        <option name="url" value="https://github.com/centersplatform/ETL_Training.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
