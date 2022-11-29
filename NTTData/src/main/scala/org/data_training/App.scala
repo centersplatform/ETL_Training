@@ -17,7 +17,7 @@ object App extends Constant{
 
     val JobsNames = args(0)
     val JobsToBeExecuted = getJobsFromInput(JobsNames)
-
+    
     println(s"Classes to be executed : $JobsNames")
 
     JobsToBeExecuted.foreach{ runnableJOB =>
