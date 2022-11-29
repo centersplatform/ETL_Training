@@ -1,12 +1,10 @@
 package org.data_training.engine
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
-
 import javax.xml.crypto.Data
 
+
 class Engine {
-
-
   def init_spark(): SparkSession ={
     val spark = SparkSession.builder()
       .master("spark://spark-master-0.spark-headless.spark.svc.cluster.local:7077")

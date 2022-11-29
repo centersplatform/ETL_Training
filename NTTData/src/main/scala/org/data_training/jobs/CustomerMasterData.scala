@@ -6,7 +6,9 @@ import org.apache.spark.sql.types.DateType
 import org.data_training.Runnable
 import org.data_training.engine.Engine
 
-class CustomerMasterData() extends Runnable{
+class CustomerMasterData(){
+
+}/* extends Runnable{
 
   def run(spark: SparkSession, odate: String, engine: Engine, args: String*): Unit = {
     import spark.implicits._
@@ -40,4 +42,4 @@ class CustomerMasterData() extends Runnable{
   }
 
 
-}
+}*/

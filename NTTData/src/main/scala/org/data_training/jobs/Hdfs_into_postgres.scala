@@ -7,7 +7,7 @@ import org.data_training.engine.Engine
 
 case class Hdfs_into_postgres() extends Runnable{
 
-  def run (spark: SparkSession, odate: String, engine: Engine,args: String*): Unit = {
+  def run (spark: SparkSession, engine: Engine,args: String*): Unit = {
 
     val schema = types.StructType(Array(
       types.StructField("id", types.StringType, true),

@@ -8,7 +8,7 @@ import org.data_training.engine.Engine
 case class Product_cat_ntt() extends Runnable {
   var product_Cat_ntDF: DataFrame = _
 
-  def run(spark: SparkSession, odate: String, engine: Engine,args: String*): Unit = {
+  def run(spark: SparkSession, engine: Engine,args: String*): Unit = {
     print("############## starting Product_cat_ntt JOB ##############")
 
     product_Cat_ntDF = spark.sql("SELECT * FROM product_category_name_translation ")
