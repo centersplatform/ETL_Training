@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ffb4202-2b2c-4c82-884d-04284ffcf36c" name="Changes" comment="add new jobs">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/MoveHDFSToHive.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/LoadHDFSToDW_CONFIG.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/LoadDataToDW.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_11_2022_11_41_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_11_2022_11_41__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/App.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/App.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Constant.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Constant.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Engine.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Engine.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/MoveHDFSToHive.scala" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

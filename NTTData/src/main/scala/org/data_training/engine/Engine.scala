@@ -4,15 +4,15 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 import javax.xml.crypto.Data
 
 
-class Engine {
+class Engine extends Constant {
   def init_spark(): SparkSession ={
     val spark = SparkSession.builder()
-      .master("spark://spark-master-0.spark-headless.spark.svc.cluster.local:7077")
-      .appName("ETL_Training")
-      .config("spark.sql.warehouse.dir", "hdfs://192.168.182.6:8020/hive/warehouse")
-      .config("hive.metastore.warehouse.dir", "hdfs://192.168.182.6:8020/hive/warehouse")
+      .master(spark_master)
+      .appName(app_name)
+      .config("spark.sql.warehouse.dir", spark_warehouse_dir)
+      .config("hive.metastore.warehouse.dir", hive_metastore_dir)
       //.config("mapreduce.fileoutputcommitter.marksuccessfuljobs", "false")
-      .config("hive.metastore.uris", "thrift://192.168.219.114:9850")
+      .config("hive.metastore.uris", hive_metastore_uris)
       .enableHiveSupport()
       .getOrCreate();
     spark
