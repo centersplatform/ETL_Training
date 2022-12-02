@@ -27,15 +27,13 @@ object App extends Constant{
     //val parsed_args= Cli.parse(args).withCommand(new ArgsConf)
 
     val JobsNames = args(0)//parsed_args { config => config.jobs_name }
-    val path_name = args(1)
-    val extension = args(2)
+    println(s"---------- Classes to be executed : $JobsNames ----------------")
     val JobsToBeExecuted = getJobsFromInput(JobsNames)
 
-    println(s"---------- Classes to be executed : $JobsNames ----------------")
     JobsToBeExecuted.foreach{ runnableJOB =>
       try{
         //runnableJOB.JobsName2Log() = JobsNames
-        runnableJOB.run(spark, engine, path_name, extension)
+        runnableJOB.run(spark, engine)
       }catch{
         case exception : Exception => print(" Job "+ runnableJOB.JobsName2Log()+ " failed. /n" + exception)
       }

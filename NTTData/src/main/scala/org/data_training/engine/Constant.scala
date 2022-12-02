@@ -11,4 +11,5 @@ trait Constant {
   val spark_warehouse_dir: String= "hdfs://192.168.182.6:8020/hive/warehouse"
   val hive_metastore_dir: String= "hdfs://192.168.182.6:8020/hive/warehouse"
   val hive_metastore_uris: String= "thrift://192.168.219.114:9850"
+  val load_hdfs_to_dw_settings: String= "/jobs_conf/CONFIG-HDFS_To_DW.yaml"
 }

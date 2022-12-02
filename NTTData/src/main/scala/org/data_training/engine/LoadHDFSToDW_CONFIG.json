@@ -1,6 +1,0 @@
-{
-  "HDFS_FILE_PATHS": ["/ecomData/customers_dataset.csv"],
-  "HIVE_DATABASE": "ecom1",
-  "HIVE_TABLE": "customers_table",
-  "LOAD_MODE": "overwrite"
-}
