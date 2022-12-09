@@ -5,6 +5,7 @@ import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.col
 import org.data_training.Runnable
 import org.apache.hadoop.fs.{FileSystem, Path}
+import org.apache.spark.sql.{DataFrame}
 
 import java.net.URI
 import org.apache.hadoop.conf.Configuration
@@ -16,6 +17,7 @@ import collection.JavaConverters._
 
 
 class LoadDataToDW extends Runnable with Constant {
+  var df_to_write: DataFrame=_
   def run (spark : SparkSession, engine: Engine ,args: String*): Unit={
     println(s"-------------- Loading HDFS Files ----------------")
     var fs = FileSystem.get(new URI(hdfs_host_server), new Configuration())
@@ -32,10 +34,12 @@ class LoadDataToDW extends Runnable with Constant {
     println(s"----------- Print Field's name $columns_name --------------")
     val header_option= hdfs_options.getOrElse("header", "true").toBoolean
     println(s"----------- Print Header Option $header_option,type: ${header_option.getClass} -------------")
-    val hive_db= conf_data.get("HIVE_DATABASE")
-    val hive_table= conf_data.get("HIVE_TABLE")
+    val hive_db= conf_data.get("HIVE_DATABASE").asInstanceOf[String]
+    val hive_table= conf_data.get("HIVE_TABLE").asInstanceOf[String]
+    val save_mode= conf_data.get("LOAD_MODE").asInstanceOf[String]
+    val primary_key= conf_data.get("PRIMARY_KEY")
 
-    assert(hive_table!="" || hive_db!="", "HIVE_DATABASE or HIVE_TABLE is not configured in the YAML file!")
+    assert(hive_table!="" || hive_db!="" || save_mode!="", "HIVE_DATABASE, HIVE_TABLE or SAVE_MODE is not configured in the YAML file!")
     println(s"----------- Create Database $hive_db if doesn't exist --------------")
     spark.sql(s"CREATE DATABASE IF NOT EXISTS $hive_db")
 
@@ -53,7 +57,7 @@ class LoadDataToDW extends Runnable with Constant {
         var df= readDFObj.read_hdfs_df(file_path = full_path,file_format = extension, options = hdfs_options)
         if (!header_option){
           println("--------- Changing columns name ----------")
-          df=df.toDF(columns_name.map(col_name=>col_name):_*)
+          df=df.toDF(columns_name.map(col_name => col_name): _*)
         }
         if (isTableExistsInDB==0){
           println(s"------------ Create a Table $hive_table in $hive_db Database -------------")
@@ -63,7 +67,23 @@ class LoadDataToDW extends Runnable with Constant {
           isTableExistsInDB= spark.sql(s"SHOW tables").filter(col("tableName")===hive_table).count()
           println(s"---------- Is Table created : ${isTableExistsInDB>0} ------------")
         }
+
+        df= df.limit(600)
+        var existed_hive_df = readDFObj.read_hive_df(database = hive_db, table_name = hive_table)
         df.show(5)
+        existed_hive_df.show(5)
+
+        if (save_mode == "append") {
+          println("------------- Removing duplicates before writing to hive ------------")
+          df_to_write= df.except(existed_hive_df)
+          println(s"------------ Number of records to write ${df_to_write.count()} --------------")
+        }
+        println(s"------------- Writing $file_path data into $hive_db.$hive_table ----------")
+        writeDFObj.write_df_to_hive(df = df_to_write, database = hive_db, table_name = hive_table, save_mode = save_mode)
+        existed_hive_df = readDFObj.read_hive_df(database = hive_db, table_name = hive_table)
+        val count_of_df= df_to_write.count()
+        val count_of_hive_df=existed_hive_df.count()
+        println(s"------------- Load is successfully done: count files records: ${count_of_df}, count hive table records: ${count_of_hive_df} ------------ ")
       }
     })
   }

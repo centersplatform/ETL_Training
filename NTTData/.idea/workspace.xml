@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7ffb4202-2b2c-4c82-884d-04284ffcf36c" name="Changes" comment="add new jobs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/WriteDataframes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/WriteDataframes.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/LoadDataToDW.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/LoadDataToDW.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

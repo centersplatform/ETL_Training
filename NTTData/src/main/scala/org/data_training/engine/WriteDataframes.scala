@@ -16,8 +16,8 @@ class WriteDataframes(spark: SparkSession) extends WriteDFs with Constant {
       val col_names = columns_to_write.map(name => col(name))
       df_to_write = df.select(col_names: _*)
     }
-    println(s"------------- Writing Hive : DataBase= $database, Table Name= $table_name -----------")
-    df_to_write.write.mode(save_mode).saveAsTable(s"$database.$table_name");
+    println(s"------------- Writing Hive : DataBase= $database, Table Name= $table_name, Save Mode: $save_mode -----------")
+    df_to_write.write.mode(save_mode).format("hive").saveAsTable(s"$database.$table_name");
   }
 
   override def write_df_to_hdfs(df: DataFrame, file_format: String=file_format, location_path: String=location_path, number_of_partitions: Int=number_of_partitions, columns_to_write: Seq[String]=Nil, options: Map[String,String]): Unit = {
