@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ffb4202-2b2c-4c82-884d-04284ffcf36c" name="Changes" comment="add new jobs">
+    <list default="true" id="7ffb4202-2b2c-4c82-884d-04284ffcf36c" name="Changes" comment="testing the append mode without writing duplicates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/WriteDataframes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/WriteDataframes.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/LoadDataToDW.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/LoadDataToDW.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,6 +194,7 @@
     <MESSAGE value="New jobs" />
     <MESSAGE value=" store the output in hdfs" />
     <MESSAGE value="add new jobs" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new jobs" />
+    <MESSAGE value="testing the append mode without writing duplicates" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing the append mode without writing duplicates" />
   </component>
 </project>

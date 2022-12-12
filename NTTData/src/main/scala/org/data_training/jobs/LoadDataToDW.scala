@@ -17,7 +17,6 @@ import collection.JavaConverters._
 
 
 class LoadDataToDW extends Runnable with Constant {
-  var df_to_write: DataFrame=_
   def run (spark : SparkSession, engine: Engine ,args: String*): Unit={
     println(s"-------------- Loading HDFS Files ----------------")
     var fs = FileSystem.get(new URI(hdfs_host_server), new Configuration())
@@ -30,7 +29,7 @@ class LoadDataToDW extends Runnable with Constant {
     println(s"----------- Print files paths: $list_hdfs_to_load -------------")
     val hdfs_options= conf_data.get("OPTIONS").asInstanceOf[java.util.Map[String,String]].asScala.toMap
     println(s"----------- Print Options: $hdfs_options ,type: ${hdfs_options.getClass}--------------")
-    val columns_name= conf_data.get("COLUMNS_NAME").asInstanceOf[java.util.ArrayList[String]].asScala
+    val columns_name= conf_data.get("COLUMNS_NAME").asInstanceOf[java.util.ArrayList[String]].asScala.asInstanceOf[Seq[String]]
     println(s"----------- Print Field's name $columns_name --------------")
     val header_option= hdfs_options.getOrElse("header", "true").toBoolean
     println(s"----------- Print Header Option $header_option,type: ${header_option.getClass} -------------")
@@ -57,31 +56,31 @@ class LoadDataToDW extends Runnable with Constant {
         var df= readDFObj.read_hdfs_df(file_path = full_path,file_format = extension, options = hdfs_options)
         if (!header_option){
           println("--------- Changing columns name ----------")
-          df=df.toDF(columns_name.map(col_name => col_name): _*)
+          df=df.toDF(columns_name.map(col_name =>col_name):_*)
         }
         if (isTableExistsInDB==0){
           println(s"------------ Create a Table $hive_table in $hive_db Database -------------")
           val fields_schema = df.schema.fields.map(f=> f.name+" "+f.dataType.typeName).mkString(",")
           println(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
-          spark.sql(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
+          spark.sql(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) """)//STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
           isTableExistsInDB= spark.sql(s"SHOW tables").filter(col("tableName")===hive_table).count()
           println(s"---------- Is Table created : ${isTableExistsInDB>0} ------------")
         }
-
-        df= df.limit(600)
+        println(s"------------ Check table $hive_table is done, Is Table created: ${isTableExistsInDB>0} ---------------")
+        df= df.limit(10)
         var existed_hive_df = readDFObj.read_hive_df(database = hive_db, table_name = hive_table)
-        df.show(5)
-        existed_hive_df.show(5)
+        df.show(10)
+        existed_hive_df.show(10)
 
-        if (save_mode == "append") {
+        if (save_mode == "append" && existed_hive_df.count()>0) {
           println("------------- Removing duplicates before writing to hive ------------")
-          df_to_write= df.except(existed_hive_df)
-          println(s"------------ Number of records to write ${df_to_write.count()} --------------")
+          df= df.except(existed_hive_df)
+          println(s"------------ Number of records to write ${df.count()} --------------")
         }
         println(s"------------- Writing $file_path data into $hive_db.$hive_table ----------")
-        writeDFObj.write_df_to_hive(df = df_to_write, database = hive_db, table_name = hive_table, save_mode = save_mode)
+        writeDFObj.write_df_to_hive(df = df, database = hive_db, table_name = hive_table, save_mode = save_mode)
         existed_hive_df = readDFObj.read_hive_df(database = hive_db, table_name = hive_table)
-        val count_of_df= df_to_write.count()
+        val count_of_df= df.count()
         val count_of_hive_df=existed_hive_df.count()
         println(s"------------- Load is successfully done: count files records: ${count_of_df}, count hive table records: ${count_of_hive_df} ------------ ")
       }
