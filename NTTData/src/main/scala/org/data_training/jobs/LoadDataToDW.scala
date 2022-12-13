@@ -61,22 +61,22 @@ class LoadDataToDW extends Runnable with Constant {
         if (isTableExistsInDB==0){
           println(s"------------ Create a Table $hive_table in $hive_db Database -------------")
           val fields_schema = df.schema.fields.map(f=> f.name+" "+f.dataType.typeName).mkString(",")
-          println(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
+          println(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) """)//STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
           spark.sql(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) """)//STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
           isTableExistsInDB= spark.sql(s"SHOW tables").filter(col("tableName")===hive_table).count()
-          println(s"---------- Is Table created : ${isTableExistsInDB>0} ------------")
         }
-        println(s"------------ Check table $hive_table is done, Is Table created: ${isTableExistsInDB>0} ---------------")
-        df= df.limit(10)
-        var existed_hive_df = readDFObj.read_hive_df(database = hive_db, table_name = hive_table)
-        df.show(10)
-        existed_hive_df.show(10)
 
+        println(s"------------ Checking table $hive_table is done, Is Table created: ${isTableExistsInDB>0} ---------------")
+        //df= df.limit(10)
+        var existed_hive_df = readDFObj.read_hive_df(database = hive_db, table_name = hive_table)
+
+        println(s"-------------- Number of records in the dataset ${df.count()}, Number of records in Hive before write ${existed_hive_df.count()} -----------------")
         if (save_mode == "append" && existed_hive_df.count()>0) {
           println("------------- Removing duplicates before writing to hive ------------")
           df= df.except(existed_hive_df)
           println(s"------------ Number of records to write ${df.count()} --------------")
         }
+
         println(s"------------- Writing $file_path data into $hive_db.$hive_table ----------")
         writeDFObj.write_df_to_hive(df = df, database = hive_db, table_name = hive_table, save_mode = save_mode)
         existed_hive_df = readDFObj.read_hive_df(database = hive_db, table_name = hive_table)
