@@ -10,25 +10,29 @@ class WriteDataframes(spark: SparkSession) extends WriteDFs with Constant {
   import spark.implicits._
   override def write_df_to_hive(df: DataFrame, database: String, table_name: String, save_mode: String, columns_to_write: Seq[String]=Nil): Unit = {
     df_to_write=df
-    if (!columns_to_write.isEmpty){
-      //df_to_write=df.select(columns_to_write.map(col):_*);
-      println(s"------------- Selecting Columns: Columns to select: $columns_to_write -----------")
-      val col_names = columns_to_write.map(name => col(name))
-      df_to_write = df.select(col_names: _*)
+    if (df_to_write.count()!=0) {
+      if (!columns_to_write.isEmpty) {
+        //df_to_write=df.select(columns_to_write.map(col):_*);
+        println(s"------------- Selecting Columns: Columns to select: $columns_to_write -----------")
+        val col_names = columns_to_write.map(name => col(name))
+        df_to_write = df.select(col_names: _*)
+      }
+      println(s"------------- Writing Hive : DataBase= $database, Table Name= $table_name, Save Mode: $save_mode -----------")
+      df_to_write.write.mode(save_mode).format("hive").saveAsTable(s"$database.$table_name")
     }
-    println(s"------------- Writing Hive : DataBase= $database, Table Name= $table_name, Save Mode: $save_mode -----------")
-    df_to_write.write.mode(save_mode).format("hive").saveAsTable(s"$database.$table_name");
   }
 
   override def write_df_to_hdfs(df: DataFrame, file_format: String=file_format, location_path: String=location_path, number_of_partitions: Int=number_of_partitions, columns_to_write: Seq[String]=Nil, options: Map[String,String]): Unit = {
     df_to_write=df
-    if (!columns_to_write.isEmpty) {
-      //df_to_write = df.select(columns_to_write.map(col): _*);
-      println(s"------------- Selecting Columns: Columns to select: $columns_to_write -----------")
-      val col_names = columns_to_write.map(name => col(name))
-      df_to_write = df.select(col_names: _*)
+    if (df_to_write.count()!=0) {
+      if (!columns_to_write.isEmpty) {
+        //df_to_write = df.select(columns_to_write.map(col): _*);
+        println(s"------------- Selecting Columns: Columns to select: $columns_to_write -----------")
+        val col_names = columns_to_write.map(name => col(name))
+        df_to_write = df.select(col_names: _*)
+      }
+      println(s"------------- Writing HDFS : format= $file_format, Number of Partitions= $number_of_partitions -----------")
+      df_to_write.repartition(number_of_partitions).write.options(options).format(file_format).save(location_path);
     }
-    println(s"------------- Writing HDFS : format= $file_format, Number of Partitions= $number_of_partitions -----------")
-    df_to_write.repartition(number_of_partitions).write.options(options).format(file_format).save(location_path);
   }
 }
