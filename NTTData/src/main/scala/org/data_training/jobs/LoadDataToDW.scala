@@ -36,7 +36,7 @@ class LoadDataToDW extends Runnable with Constant {
     val hive_db= conf_data.get("HIVE_DATABASE").asInstanceOf[String]
     val hive_table= conf_data.get("HIVE_TABLE").asInstanceOf[String]
     val save_mode= conf_data.get("LOAD_MODE").asInstanceOf[String]
-    val primary_key= conf_data.get("PRIMARY_KEY")
+    val primary_key= conf_data.get("PRIMARY_KEY").asInstanceOf[String]
 
     assert(hive_table!="" || hive_db!="" || save_mode!="", "HIVE_DATABASE, HIVE_TABLE or SAVE_MODE is not configured in the YAML file!")
     println(s"----------- Create Database $hive_db if doesn't exist --------------")
@@ -49,7 +49,7 @@ class LoadDataToDW extends Runnable with Constant {
     val writeDFObj = new WriteDataframes(spark = spark)
     val extension=conf_data.get("FILE_FORMAT").asInstanceOf[String]
 
-    list_hdfs_to_load.forEach(file_path =>{
+    list_hdfs_to_load.asScala.foreach(file_path =>{
       val full_path = hdfs_host_server+file_path
       if (full_path.endsWith(extension)){
         println(s"----------- Reading $file_path -------------")
@@ -61,8 +61,9 @@ class LoadDataToDW extends Runnable with Constant {
         if (isTableExistsInDB==0){
           println(s"------------ Create a Table $hive_table in $hive_db Database -------------")
           val fields_schema = df.schema.fields.map(f=> f.name+" "+f.dataType.typeName).mkString(",")
-          println(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) """)//STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
-          spark.sql(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) """)//STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
+          val primary_key_check= Option(primary_key).map(pk => "PRIMARY KEY (" + pk + ")").getOrElse("")
+          println(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) $primary_key_check """)//STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
+          spark.sql(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) $primary_key_check""")//STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
           isTableExistsInDB= spark.sql(s"SHOW tables").filter(col("tableName")===hive_table).count()
         }
 
@@ -76,7 +77,6 @@ class LoadDataToDW extends Runnable with Constant {
           df= df.except(existed_hive_df)
           println(s"------------ Number of records to write ${df.count()} --------------")
         }
-
         println(s"------------- Writing $file_path data into $hive_db.$hive_table ----------")
         writeDFObj.write_df_to_hive(df = df, database = hive_db, table_name = hive_table, save_mode = save_mode)
         existed_hive_df = readDFObj.read_hive_df(database = hive_db, table_name = hive_table)
