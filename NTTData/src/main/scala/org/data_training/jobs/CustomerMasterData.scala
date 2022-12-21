@@ -4,11 +4,22 @@ import org.apache.spark.sql.functions.{col, regexp_replace}
 import org.apache.spark.sql.{SparkSession, types}
 import org.apache.spark.sql.types.DateType
 import org.data_training.Runnable
-import org.data_training.engine.Engine
+import org.data_training.engine.{Engine, ReadDataframes}
 
-class CustomerMasterData(){
+class CustomerMasterData extends Runnable {
+  def run (spark : SparkSession, engine: Engine ,args: String*): Unit={
+    println("-------------- Read Data from PostgresQL ------------------")
+    val readDFObj = new ReadDataframes(spark = spark)
+    val df= readDFObj.read_postgresql_df(database = "spark1", table_name = "test1")
+    println("-------------- Succesfully PostgresQL ------------------")
+    df.show(22)
+  }
 
-}/* extends Runnable{
+  def JobsName2Log(): String = {
+    "CustomerMasterData"
+  }
+}
+/* extends Runnable{
 
   def run(spark: SparkSession, odate: String, engine: Engine, args: String*): Unit = {
     import spark.implicits._

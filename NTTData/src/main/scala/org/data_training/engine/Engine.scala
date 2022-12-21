@@ -13,6 +13,7 @@ class Engine extends Constant {
       .appName(app_name)
       .config("spark.sql.warehouse.dir", spark_warehouse_dir)
       .config("hive.metastore.warehouse.dir", hive_metastore_dir)
+      //.config("spark.jars", "postgresql-42.3.3.jar")
       //.config("mapreduce.fileoutputcommitter.marksuccessfuljobs", "false")
       .config("hive.metastore.uris", hive_metastore_uris)
       .enableHiveSupport()

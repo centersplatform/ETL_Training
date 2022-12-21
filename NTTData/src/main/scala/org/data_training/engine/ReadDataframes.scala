@@ -62,5 +62,16 @@ class ReadDataframes(spark: SparkSession) extends ReadDFs with Constant {
     df
   }
 
-  override def read_postgresql_df(): Unit={}
+  override def read_postgresql_df(database: String, table_name: String): DataFrame={
+    val url_postgres= jdbc_connection_string + database
+    df= spark.read.format("jdbc").option("url", url_postgres).
+      option("dbtable", table_name).option("user", postgres_user_name).option("password", postgres_password).
+      option("driver", "org.postgresql.Driver").load()
+
+    // Print Nulls summary
+    println("-------------- Count of Nulls by column --------------")
+    //df.select(df.columns.map(col_name => count(when(col(col_name).isNull, col_name)).alias(col_name)): _*).show()
+    // return
+    df
+  }
 }
