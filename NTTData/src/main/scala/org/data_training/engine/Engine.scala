@@ -2,10 +2,12 @@ package org.data_training.engine
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import javax.xml.crypto.Data
+//import scala.sys.props
 
 
 class Engine extends Constant {
   def init_spark(): SparkSession ={
+    //props("HADOOP_USER_NAME") = "hive"
     val spark = SparkSession.builder()
       .master(spark_master)
       .appName(app_name)

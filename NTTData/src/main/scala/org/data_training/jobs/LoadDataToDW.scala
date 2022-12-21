@@ -18,12 +18,12 @@ import collection.JavaConverters._
 
 class LoadDataToDW extends Runnable with Constant {
   def run (spark : SparkSession, engine: Engine ,args: String*): Unit={
-    println(s"-------------- Loading HDFS Files ----------------")
+    println(s"-------------- Loading HDFS Files, spark User Name: ${System.getProperty("user.name")} ----------------")
     var fs = FileSystem.get(new URI(hdfs_host_server), new Configuration())
     val yaml_fileStream =fs.open( new Path(load_hdfs_to_dw_settings))
     val yaml= new Yaml()
     val conf_data= yaml.load(yaml_fileStream).asInstanceOf[java.util.Map[String, Any]]
-    
+
     val list_hdfs_to_load= conf_data.get("HDFS_FILE_PATHS").asInstanceOf[java.util.ArrayList[String]]
     println(s"----------- Print Settings: $conf_data -------------")
     println(s"----------- Print files paths: $list_hdfs_to_load -------------")
@@ -61,10 +61,10 @@ class LoadDataToDW extends Runnable with Constant {
         if (isTableExistsInDB==0){
           println(s"------------ Create a Table $hive_table in $hive_db Database -------------")
           val fields_schema = df.schema.fields.map(f=> f.name+" "+f.dataType.typeName).mkString(",")
-          val primary_key_check= Option(primary_key).map(pk => "PRIMARY KEY (" + pk + ")").getOrElse("")
-          println(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) $primary_key_check """)//STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
-          spark.sql(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema) $primary_key_check""")//STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
-          isTableExistsInDB= spark.sql(s"SHOW tables").filter(col("tableName")===hive_table).count()
+          val primary_key_check= ""//Option(primary_key).map(pk => ", PRIMARY KEY (" + pk +") DISABLE NOVALIDATE" ).getOrElse("")
+          println(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema $primary_key_check) """)//STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
+          spark.sql(s"""CREATE TABLE IF NOT EXISTS $hive_db.$hive_table ($fields_schema $primary_key_check)""")//STORED AS ORC TBLPROPERTIES ('transactional'='true')""")
+          isTableExistsInDB = spark.sql(s"SHOW tables").filter(col("tableName")===hive_table).count()
         }
 
         println(s"------------ Checking table $hive_table is done, Is Table created: ${isTableExistsInDB>0} ---------------")
