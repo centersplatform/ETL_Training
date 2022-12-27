@@ -6,11 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="7ffb4202-2b2c-4c82-884d-04284ffcf36c" name="Changes" comment="testing the append mode without writing duplicates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Constant.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Constant.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Engine.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/Engine.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/ReadDataframes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/ReadDataframes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/WriteDataframes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/engine/WriteDataframes.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/CustomerMasterData.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/jobs/CustomerMasterData.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/utils/ReadDFs.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/utils/ReadDFs.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/org/data_training/utils/WriteDFs.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/org/data_training/utils/WriteDFs.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

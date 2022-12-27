@@ -23,7 +23,7 @@
     <spec2.version>4.2.0</spec2.version>
     <spark-core_2.12.version>3.3.0</spark-core_2.12.version>
     <spark-sql_2.12.version>3.3.0</spark-sql_2.12.version>
-    <postgresql.version>42.5.0</postgresql.version>
+    <postgresql.version>42.3.3</postgresql.version>
     <log4j-api.vesrion>2.19.0</log4j-api.vesrion>
     <log4j-core.version>2.19.0</log4j-core.version>
   </properties>

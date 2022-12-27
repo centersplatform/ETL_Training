@@ -16,4 +16,8 @@ trait Constant {
   val postgres_driver: String= "org.postgresql.Driver"
   val postgres_user_name: String= "postgres"
   val postgres_password: String= "abJIbg3d53"
+  val postgres_db_datawarehouse: String= "ecomdwdb"
+  val postgres_table_datawarehouse: String= "ecomRecomendationDM"
 }
+
+
