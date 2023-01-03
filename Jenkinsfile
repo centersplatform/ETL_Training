@@ -7,7 +7,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building the project...'
-        sh "cd NTTData && mvn package"
+        sh "cd NTTData && mvn clean package"
       }
     }
     stage('Test') {
