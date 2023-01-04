@@ -9,7 +9,7 @@ pipeline {
     stage('init'){
       steps{
         echo "Loading the groovy script..."
-        scripts{
+        script{
           gv= load "ecom-script.groovy"
         }
       }
@@ -17,7 +17,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building the project...'
-        scripts{
+        script{
           gv.buildFunc() 
         }
       }
