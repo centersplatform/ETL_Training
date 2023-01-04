@@ -1,13 +1,25 @@
+def gv
+
 pipeline {
   agent any
   tools {
     maven 'maven-3.8.1'
   }
   stages {
+    stage('init'){
+      steps{
+        echo "Loading the groovy script..."
+        scripts{
+          gv= load "ecom-script.groovy"
+        }
+      }
+    }
     stage('Build') {
       steps {
         echo 'Building the project...'
-        sh "cd NTTData && mvn clean package"
+        scripts{
+          gv.buildFunc() 
+        }
       }
     }
     stage('Test') {
