@@ -35,9 +35,9 @@ pipeline {
     stage('Spark-submit') {
       steps {
         echo 'submitting the Spark job'
-       /* script{
+        script{
           gv.sparkSubmit()
-        }*/
+        }
       }
     }
   }
