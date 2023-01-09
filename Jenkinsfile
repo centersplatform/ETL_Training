@@ -24,16 +24,19 @@ pipeline {
     }
     stage('Copy jat to Spark') {
       steps {
-        echo 'Copying the jar file from local fs to Spark pod
-        gv.cpJarToSpark()
+        echo 'Copying the jar file from local fs to Spark pod'
+        script{
+          gv.cpJarToSpark()
+        }
 
       }
     }
     stage('Spark-submit') {
       steps {
-        echo 'submitting the Spark job
-        gv.sparkSubmit()
-        
+        echo 'submitting the Spark job'
+        script{
+          gv.sparkSubmit()
+        }
       }
     }
   }
