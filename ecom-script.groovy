@@ -4,7 +4,7 @@ def buildFunc(){
 
 def cpJarToSpark(){
   sshagent(credentials:['ssh-test']){       
-        sh 'ssh  -o StrictHostKeyChecking=no  
+        sh '''ssh  -o StrictHostKeyChecking=no  
               admin@38.242.220.77  
               kubectl cp /srv/nfs/kubedata/jenkins-jenkins-pvc-a6da9cc2-3bef-4500-a284-8178a2ccf9ea/workspace/ecom-dev-pipeline_master/NTTData/target/NTTData-1.0-SNAPSHOT.jar spark-master-0:tmp -n spark'''
     } 
