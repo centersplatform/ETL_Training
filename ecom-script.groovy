@@ -12,9 +12,7 @@ def cpJarToSpark(){
 
 def sparkSubmit(){
   sshagent(credentials:['ssh-test']){       
-        sh '''ssh  -o StrictHostKeyChecking=no  
-              admin@38.242.220.77  
-              kubectl exec -it spark-master-0 -n spark  -- spark-submit --master spark://spark-master-svc:7077 --class org.data_training.App tmp/NTTData-1.0-SNAPSHOT.jar LoadDataToDW --executor-memory 10g --driver-memory 10g'''
+        sh 'ssh  -o StrictHostKeyChecking=no  admin@38.242.220.77  kubectl exec -it spark-master-0 -n spark  -- spark-submit --master spark://spark-master-svc:7077 --class org.data_training.App tmp/NTTData-1.0-SNAPSHOT.jar LoadDataToDW --executor-memory 10g --driver-memory 10g'
     }
 }
 
