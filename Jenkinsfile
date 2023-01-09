@@ -22,16 +22,18 @@ pipeline {
         }
       }
     }
-    stage('Test') {
+    stage('Copy jat to Spark') {
       steps {
-        echo 'Running tests...'
-        // run tests here
+        echo 'Copying the jar file from local fs to Spark pod
+        gv.cpJarToSpark()
+
       }
     }
-    stage('Deploy') {
+    stage('Spark-submit') {
       steps {
-        echo 'Deploying the application...'
-        // deploy the application here
+        echo 'submitting the Spark job
+        gv.sparkSubmit()
+        
       }
     }
   }
