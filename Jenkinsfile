@@ -6,7 +6,7 @@ pipeline {
     maven 'maven-3.8.1'
   }
   parameters{
-    string(name:'executorMemory', defaultValue:'10g, description:'Set the executor memory you want to allocate')
+    string(name:'executorMemory', defaultValue:'10g', description:'Set the executor memory you want to allocate')
   }
   stages {
     stage('init'){
