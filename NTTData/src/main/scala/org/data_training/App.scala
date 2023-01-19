@@ -1,8 +1,10 @@
 package org.data_training
 
 import org.data_training.engine.Engine
+
 import scala.collection.mutable.ListBuffer
 import org.data_training.engine.Constant
+import org.apache.log4j.{Level, Logger, FileAppender, SimpleLayout}
 //import org.backuity.clist.{Cli, Command, opt}
 
 
@@ -19,11 +21,23 @@ import org.data_training.engine.Constant
 }*/
 object App extends Constant{
   //main function
-  def main(args : Array[String]) {
+  def main(args : Array[String])={
     // initialization of  SparkSession
     val engine =  new Engine()
     val spark = engine.init_spark()
+    // logger options
+    val logger= Logger.getLogger(getClass.getName)//.setLevel(Level.INFO)
+    /*val fileAppender= new FileAppender()
+    val layout= new SimpleLayout()
+    fileAppender.setLayout(layout)
+    fileAppender.setFile("logs/spark.log")
+    fileAppender.activateOptions()
 
+    Logger.getRootLogger().addAppender(fileAppender)
+    */
+    logger.info("---------- Testing Logs using log4j framework --------------")
+
+    //logger.in("--- Trying Logger test------")
     //val parsed_args= Cli.parse(args).withCommand(new ArgsConf)
 
     val JobsNames = args(0)//parsed_args { config => config.jobs_name }

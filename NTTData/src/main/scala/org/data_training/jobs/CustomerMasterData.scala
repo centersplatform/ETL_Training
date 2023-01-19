@@ -13,6 +13,7 @@ import org.apache.spark.sql.Row
 class CustomerMasterData extends Runnable with Constant {
   def run (spark : SparkSession, engine: Engine ,args: String*): Unit={
     println("-------------- Process Data And Create A PostgresQl DW ------------------")
+    val n="25512.225".indexOf(".")
     val writeDFObj = new WriteDataframes(spark = spark)
     val readDFObj = new ReadDataframes(spark = spark)
 
